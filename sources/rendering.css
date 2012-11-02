@@ -1,0 +1,32 @@
+body {
+	width: 980px;
+	margin: 40px auto;
+}
+
+#head {
+	padding-bottom: 10px;
+	border-bottom: 1px solid gray;
+	font-family: "Lato", sans-serif;
+}
+
+#logo {
+ 	font-size: 26pt;
+}
+
+#logo a {
+ 	text-decoration: none;
+}
+
+#logo .logo-share {
+ 	color: #56a015;	
+}
+
+#logo .logo-base {
+ 	color: #868686;
+}
+
+.image {
+	max-width: 100%;
+	margin: 5px auto;
+	border: none;
+}

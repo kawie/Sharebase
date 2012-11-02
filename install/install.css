@@ -1,0 +1,37 @@
+#progress_frame {
+	height: 8px;
+	width: 100%;
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-o-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+}
+
+#progress_content {
+	margin-top: 1px;
+	margin-left: 1px;
+	max-width: 978px;
+	height: 6px;
+	background-color: #56a015;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-o-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+ 	-moz-border-radius: 3px;
+ 	-webkit-border-radius: 3px;
+ 	border-radius: 3px;
+ 	border: 1px solid #ccc;
+ 	background-color: #fff;
+ 	padding: 2px;
+}
+
+#logo {
+	font-size: 26pt;
+}
