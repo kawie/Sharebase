@@ -35,6 +35,3 @@ nbproject
 .idea
 node_modules
 dist
-
-#Specific files
-anleitung.pdf
