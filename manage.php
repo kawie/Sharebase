@@ -114,7 +114,7 @@ if(!isset($_SESSION["username"]))
 	       $link_addition = 'upload/';
        }
         
-        echo '<li class="name"><span'.$class_invisible.'><a href="'.$link_addition.''.$name.'">'.$name.'</a></span></li>';
+        echo '<li class="name"><span'.$class_invisible.'><a href="'.$link_addition.''.$name.'" target="_blank">'.$name.'</a></span></li>';
         echo '<li class="date"><span'.$class_invisible.'>';
         echo round($size / 1024, 3).' KB</span></li>';
         echo '<li class="size"><span'.$class_invisible.'>'.$owner.'</span></li>';
