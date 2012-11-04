@@ -34,7 +34,7 @@ if(!isset($_SESSION["username"]))
     Design und allgemeine Awesomeness: <a href="https://twitter.com/#!/KaWie">Kai Wieland (@KaWie)</a> <a href="mailto:kai@sharebase.eu">(Mail)</a><br />
     Programmierung: <a href="https://twitter.com/#!/Der_Hutt">Jannis Hutt (@Der_Hutt)</a> <a href="mailto:jannis@sharebase.eu">(Mail)</a></span><br />
     
-    <br /><span style="color:#ccc;font-size:10pt;font-style:italic;">Sharebase Open Beta 0.9 &middot; <a href="http://sharebase.eu">Sharebase.eu</a> &middot; <a href="http://github.com/Sharebase">Sharebase on GitHub</a></span>
+    <br /><span style="color:#ccc;font-size:10pt;font-style:italic;">Sharebase Open Beta 0.9.0.1 &middot; <a href="http://sharebase.eu">Sharebase.eu</a> &middot; <a href="http://github.com/Sharebase">Sharebase on GitHub</a></span>
   </div>
  </div>
 </body>
