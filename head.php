@@ -20,6 +20,7 @@ if(isset($_POST['visibility_option'])) {
 } else {
 	$visibility_option = 1;
 }
+$character = '#^[a-z0-9]+$#i';
 
 $extension_query = mysql_query('SELECT * FROM sharebase_fileextensions');
 $allowedExtensions = array();
@@ -59,31 +60,31 @@ function writelog($logfile_action) {
  fclose($logfile_handle);
 }
      
-if(isset($_GET['action']) and $_GET['action'] == "upload")
-{
-if($_FILES['datei']['size'] <  $filesizebyte AND !file_exists('upload/'.$uploaded_filename.'') AND !empty($uploaded_filename)) {
-      if(!empty($custom_name)) {
-      	  $uploaded_fileextension = pathinfo($uploaded_filename, PATHINFO_EXTENSION);
-	      $uploaded_filename = ''.$custom_name.'.'.$uploaded_fileextension.'';
-      }
-      move_uploaded_file($_FILES['datei']['tmp_name'], "upload/".$uploaded_filename);
-      setcookie("uploaded", "true", time()+2);
-      mysql_query("INSERT INTO sharebase_files (name, owner, size, visible) VALUES ('$uploaded_filename', '$owner', '$size', '$visibility_option');");
-      writelog("".$owner." has uploaded a new file: '".$uploaded_filename."'");
-      echo '<html><head><meta http-equiv="refresh" content="0; URL=' . $_SERVER['PHP_SELF'] . '">';
-      }
-elseif(empty($uploaded_filename)) {
+if(isset($_GET['action']) and $_GET['action'] == "upload") {
+	if(!empty($custom_name)) {
+		$uploaded_fileextension = pathinfo($uploaded_filename, PATHINFO_EXTENSION);
+		$uploaded_filename = ''.$custom_name.'.'.$uploaded_fileextension.'';
+	}
+	if(!preg_match($character, $uploaded_filename)) {
+		setcookie("error", "filename", time()+2);
+        echo '<html><head><meta http-equiv="refresh" content="0; URL=' . $_SERVER['PHP_SELF'] . '">';
+        exit;
+	}
+	if(empty($uploaded_filename)) {
          setcookie("error", "nofile", time()+2);
          echo '<html><head><meta http-equiv="refresh" content="0; URL=' . $_SERVER['PHP_SELF'] . '">';
-}
-elseif(file_exists('upload/'.$uploaded_filename.'')) {
-         setcookie("error", "fileexists", time()+2);
-         echo '<html><head><meta http-equiv="refresh" content="0; URL=' . $_SERVER['PHP_SELF'] . '">';
-}
-else {
-		 setcookie("error", "filesize", time()+2);
-         echo '<html><head><meta http-equiv="refresh" content="0; URL=' . $_SERVER['PHP_SELF'] . '">';
-}
+	} else {
+		 if(file_exists('upload/'.$uploaded_filename)) {
+         	setcookie("error", "fileexists", time()+2);
+         	echo '<html><head><meta http-equiv="refresh" content="0; URL=' . $_SERVER['PHP_SELF'] . '">';
+		 } else {
+			 move_uploaded_file($_FILES['datei']['tmp_name'], "upload/".$uploaded_filename);
+			 setcookie("uploaded", "true", time()+2);
+			 mysql_query("INSERT INTO sharebase_files (name, owner, size, visible) VALUES ('$uploaded_filename', '$owner', '$size', '$visibility_option');");
+			 writelog("".$owner." has uploaded a new file: '".$uploaded_filename."'");
+			 echo '<html><head><meta http-equiv="refresh" content="0; URL=' . $_SERVER['PHP_SELF'] . '">';
+		 }
+	}
 }
 ?>
 <!DOCTYPE html>

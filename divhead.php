@@ -69,8 +69,21 @@
          </script>
         </div>
         <?
+         }elseif(isset($_COOKIE['error']) and $_COOKIE['error'] == "filename"){
+        ?>
+        <div class="error message">
+         <script type="text/javascript">
+          showNotification({
+           message: "Der Dateiname darf nur aus Buchstaben und Zahlen bestehen. Umlaute sind nicht erlaubt!",
+           type: "error",
+           autoClose: true,
+           duration: 2
+          });
+         </script>
+        </div>
+        <?
          }
-        ?> 
+        ?>
     <ul>
      <li><a href="login.php?action=logout"><button class="greenq"><img src="sources/img/logout.png" alt="Logout"/></button></a></li>
     <?php
