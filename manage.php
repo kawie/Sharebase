@@ -48,14 +48,18 @@ if(!isset($_SESSION["username"]))
 	    }
 	    
 	    if(isset($newname)) {
-	    	$fileextension = pathinfo($oldname, PATHINFO_EXTENSION);
-	    	if(pathinfo($newname, PATHINFO_EXTENSION) != $fileextension) $newname .= '.'.$fileextension;
-	    	if(rename('upload/'.$oldname.'', 'upload/'.$newname.'')) {
-		    	mysql_query('UPDATE sharebase_files SET name = "'.$newname.'" WHERE name = "'.$oldname.'"');
-		    	writelog("".$owner." has renamed a file: from '".$oldname."' to '".$newname."'");
-		    	echo '<div id="success">Die Datei wurde erfolgreich umbenannt.</div>';
+	    	if(!preg_match($character, $uploaded_filename)) {
+		    	echo '<div id="error">Der Dateiname darf nur aus Buchstaben und Zahlen bestehen. Umlaute sind nicht erlaubt!</div>';
 	    	} else {
+		    	$fileextension = pathinfo($oldname, PATHINFO_EXTENSION);
+		    	if(pathinfo($newname, PATHINFO_EXTENSION) != $fileextension) $newname .= '.'.$fileextension;
+		    	if(rename('upload/'.$oldname.'', 'upload/'.$newname.'')) {
+		    		mysql_query('UPDATE sharebase_files SET name = "'.$newname.'" WHERE name = "'.$oldname.'"');
+		    		writelog("".$owner." has renamed a file: from '".$oldname."' to '".$newname."'");
+		    		echo '<div id="success">Die Datei wurde erfolgreich umbenannt.</div>';
+		    	} else {
 		    	echo '<div id="error">Ein unbekannter Fehler ist aufgetreten.</div>';
+		    	}
 	    	}
 	    }
 	    if(isset($delfile)) {
