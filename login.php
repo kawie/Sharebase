@@ -82,7 +82,7 @@ function writelog($logfile_action) {
      <input id="button" type="submit" value="Login">
     </div>
    </form>
-   <span class="foot">(cc) 2012 Sharebase &nbsp;&middot;&nbsp; <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/de/">Lizenz: CC BY-NC-SA 3.0</a></span>
+   <span class="foot">(cc) 2012 Sharebase &nbsp;&middot;&nbsp; <a href="http://creativecommons.org/licenses/by-sa/3.0/de/">Lizenz: CC BY-SA 3.0</a></span>
  </div>
 </body>
 </html>
