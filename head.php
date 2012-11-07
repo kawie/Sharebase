@@ -20,7 +20,7 @@ if(isset($_POST['visibility_option'])) {
 } else {
 	$visibility_option = 1;
 }
-$character = '#^[A-Za-z0-9_.+-]+[.]+$#i';
+$character = '#[A-Za-z0-9_.+-]+[.][A-Za-z0-9]+#i';
 
 $extension_query = mysql_query('SELECT * FROM sharebase_fileextensions');
 $allowedExtensions = array();
