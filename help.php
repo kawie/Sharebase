@@ -30,9 +30,9 @@ if(!isset($_SESSION["username"]))
     <br />
     <span class="question">Sharebase ist Teamwork!</span><br />
     <span class="answer">
-    Programmierung und Design: <a href="https://twitter.com/#!/janh97">Jan Hassel (@janh97)</a> <a href="mailto:jan@sharebase.eu">(Mail)</a><br />
-    Design und allgemeine Awesomeness: <a href="https://twitter.com/#!/KaWie">Kai Wieland (@KaWie)</a> <a href="mailto:kai@sharebase.eu">(Mail)</a><br />
-    Programmierung: <a href="https://twitter.com/#!/Der_Hutt">Jannis Hutt (@Der_Hutt)</a> <a href="mailto:jannis@sharebase.eu">(Mail)</a></span><br />
+    Programmierung und Design: <a href="https://twitter.com/#!/janh97">Jan (@janh97)</a> <a href="mailto:jan@sharebase.eu">(Mail)</a><br />
+    Design und allgemeine Awesomeness: <a href="https://twitter.com/#!/KaWie">Kai (@KaWie)</a> <a href="mailto:kai@sharebase.eu">(Mail)</a><br />
+    Programmierung: <a href="https://twitter.com/#!/Der_Hutt">Jannis (@Der_Hutt)</a> <a href="mailto:jannis@sharebase.eu">(Mail)</a></span><br />
     
     <br /><span style="color:#ccc;font-size:10pt;font-style:italic;">Sharebase Open Beta 0.9.0.1 &middot; <a href="http://sharebase.eu">Sharebase.eu</a> &middot; <a href="http://github.com/Sharebase">Sharebase on GitHub</a></span>
   </div>
