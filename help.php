@@ -28,7 +28,7 @@ if(!isset($_SESSION["username"]))
     <span class="question">"Datei anlegen" - Was ist das denn?</span><br />
     <span class="answer">Bei "Datei anlegen" kannst Du ganz einfach online einen Text verfassen, der dann automatisch in der Sharebase gespeichert wird. Um Dir das Schreiben angenehmer zu einfacher zu machen, setzt die Sharebase auf <a href="http://daringfireball.net/projects/markdown/">Markdown</a>, mit dem du deine Texte einfach formatieren kannst. Lies dir dabei am Besten die <a href="markdown.php">Anleitung und Tipps f&uuml;r die Verwendeung von Markdown</a> durch. Du wirst begeistert sein!<br />
     <br />
-    <span class="question">Wer ist f&uuml;r diesen Bullshit verantwortlich?</span><br />
+    <span class="question">Sharebase ist Teamwork!</span><br />
     <span class="answer">
     Programmierung und Design: <a href="https://twitter.com/#!/janh97">Jan Hassel (@janh97)</a> <a href="mailto:jan@sharebase.eu">(Mail)</a><br />
     Design und allgemeine Awesomeness: <a href="https://twitter.com/#!/KaWie">Kai Wieland (@KaWie)</a> <a href="mailto:kai@sharebase.eu">(Mail)</a><br />
